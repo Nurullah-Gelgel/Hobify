@@ -41,6 +41,10 @@ namespace Hobify.Infrastructure.Repository
         public async Task<SubCategory> DeleteAsync(Guid id)
         {
             var subCategory = _context.SubCategories.Find(id);
+            if (subCategory == null)
+            {
+                return null;
+            }
             _context.SubCategories.Remove(subCategory);
             await _context.SaveChangesAsync();
             return subCategory;

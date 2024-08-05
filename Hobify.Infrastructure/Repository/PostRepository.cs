@@ -43,6 +43,10 @@ namespace Hobify.Infrastructure.Repository
         public async Task<Post> DeleteAsync(Guid id)
         {
             var post = _context.Posts.Find(id);
+            if (post == null)
+            {
+                return null;
+            }
             _context.Posts.Remove(post);
             await _context.SaveChangesAsync();
             return post;            

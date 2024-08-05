@@ -25,27 +25,27 @@ namespace Hobify.Application.Service
 
         public async Task<IEnumerable<ProductDto>> GetAllAsync()
         {
-            var products = productService.GetAllAsync();
+            var products = await productService.GetAllAsync();
             return _mapper.Map<IEnumerable<ProductDto>>(products);
 
         }
 
         public async Task<ProductDto> GetByIdAsync(Guid id)
         {
-            var product = productService.GetByIdAsync(id);
+            var product = await productService.GetByIdAsync(id);
             return _mapper.Map<ProductDto>(product);
         }
 
         public async Task<ProductDto> UpdateAsync(ProductDto productDto)
         {
             var product = _mapper.Map<Product>(productDto);
-            var productUpdated = productService.UpdateAsync(product);
+            var productUpdated = await productService.UpdateAsync(product);
             return _mapper.Map<ProductDto>(productUpdated);
         }
 
         public async Task<ProductDto> DeleteAsync(Guid id)
         {
-            var productDeleted = productService.DeleteAsync(id);
+            var productDeleted =await productService.DeleteAsync(id);
             return _mapper.Map<ProductDto>(productDeleted);
         }
 

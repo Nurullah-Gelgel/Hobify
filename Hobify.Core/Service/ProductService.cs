@@ -1,39 +1,40 @@
 ﻿using Hobify.Core.Entity;
+using Hobify.Core.Interface.Repository;
 using Hobify.Core.Interface.Services;
 
 namespace Hobify.Core.Service
 {
     public class ProductService : IProductService
     {
-        private readonly IProductService _productService;
+        private readonly IProductRepository _productRepository;
 
-        public ProductService(IProductService productService)
+        public ProductService(IProductRepository productRepository)
         {
-            _productService = productService;
+            _productRepository = productRepository;
         }
         public async Task<Product> CreateAsync(Product product)
         {
-            return await _productService.CreateAsync(product);
+            return await _productRepository.CreateAsync(product);
         }
 
         public async Task<Product> DeleteAsync(Guid id)
         {
-            return await _productService.DeleteAsync(id);
+            return await _productRepository.DeleteAsync(id);
         }
 
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
-            return await _productService.GetAllAsync();
+            return await _productRepository.GetAllAsync();
         }
 
         public async Task<Product> GetByIdAsync(Guid id)
         {
-            return await _productService.GetByIdAsync(id);
+            return await _productRepository.GetByIdAsync(id);
         }
 
         public async Task<Product> UpdateAsync(Product product)
         {
-            return await _productService.UpdateAsync(product);
+            return await _productRepository.UpdateAsync(product);
         }
     }
 }

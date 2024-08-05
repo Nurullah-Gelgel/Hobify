@@ -17,6 +17,7 @@ namespace Hobify.Infrastructure.Extensions
             services.AddScoped<IPostRepository, PostRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
+            services.AddScoped<IProductRepository, ProductRepository>();
  
 
             return services;

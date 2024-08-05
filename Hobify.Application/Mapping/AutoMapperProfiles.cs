@@ -21,6 +21,9 @@ namespace Hobify.Applicatione.Mapping
             CreateMap<Category, CategoryDto>().ReverseMap();    
            
             CreateMap<SubCategory, SubCategoryDto>().ReverseMap();
+
+            CreateMap<Product, ProductDto>().ReverseMap();
+
         }
     }
 }
