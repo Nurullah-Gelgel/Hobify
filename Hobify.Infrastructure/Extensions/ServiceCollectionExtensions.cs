@@ -19,7 +19,7 @@ namespace Hobify.Infrastructure.Extensions
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
- 
+            services.AddScoped<IForumTopicRepository, IForumTopicRepository>();
 
             return services;
         }

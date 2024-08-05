@@ -26,6 +26,8 @@ namespace Hobify.Applicatione.Mapping
 
             CreateMap<Product, ProductDto>().ReverseMap();
 
+            CreateMap<ForumTopic, ForumTopicDto>().ReverseMap();
+
         }
     }
 }
