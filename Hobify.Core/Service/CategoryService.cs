@@ -1,39 +1,40 @@
 ﻿using Hobify.Core.Entity;
+using Hobify.Core.Interface.Repository;
 using Hobify.Core.Interface.Services;
 
 namespace Hobify.Core.Service
 {
     public class CategoryService : ICategoryService
     {
-        private readonly ICategoryService _categoryService;
+        private readonly ICategoryRepository _repository;
 
-        public CategoryService(ICategoryService categoryService)
+        public CategoryService(ICategoryRepository categoryRepository)
         {
-            _categoryService = categoryService;
+            _repository = categoryRepository;
         }
         public async Task<Category> CreateAsync(Category category)
         {
-            return await _categoryService.CreateAsync(category);
+            return await _repository.CreateAsync(category);
         }
 
         public async Task<Category> DeleteAsync(Guid id)
         {
-            return await _categoryService.DeleteAsync(id);
+            return await _repository.DeleteAsync(id);
         }
 
         public async Task<IEnumerable<Category>> GetAllAsync()
         {
-            return await _categoryService.GetAllAsync();
+            return await _repository.GetAllAsync();
         }
 
         public async Task<Category> GetByIdAsync(Guid id)
         {
-            return await _categoryService.GetByIdAsync(id);
+            return await _repository.GetByIdAsync(id);
         }
 
         public async Task<Category> UpdateAsync(Category category)
         {
-            return await _categoryService.UpdateAsync(category);
+            return await _repository.UpdateAsync(category);
         }
     }
 }

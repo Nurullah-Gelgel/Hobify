@@ -6,12 +6,12 @@ using Hobify.Core.Interface.Services;
 
 namespace Hobify.Application.Service
 {
-    public class ChatRoomService : IChatRoomAppService
+    public class ChatRoomAppService : IChatRoomAppService
     {
         private readonly IChatRoomService _chatRoomService;
         private readonly IMapper _mapper;
 
-        public ChatRoomService(IChatRoomService chatRoomService, IMapper mapper)
+        public ChatRoomAppService(IChatRoomService chatRoomService, IMapper mapper)
         {
             _chatRoomService = chatRoomService;
             _mapper = mapper;

@@ -6,12 +6,12 @@ using Hobify.Core.Interface.Services;
 
 namespace Hobify.Application.Service
 {
-    public class CommentService : ICommentAppService
+    public class CommentAppService : ICommentAppService
     {
         private readonly ICommentService _commentService;
         private readonly IMapper _mapper;
 
-        public CommentService(ICommentService commentService, IMapper mapper)
+        public CommentAppService(ICommentService commentService, IMapper mapper)
         {
             _commentService = commentService;
             _mapper = mapper;

@@ -6,12 +6,12 @@ using Hobify.Core.Interface.Services;
 
 namespace Hobify.Application.Service
 {
-    public class UserService : IUserAppService
+    public class UserAppService : IUserAppService
     {
         private readonly IUserService _userService;
         private readonly IMapper mapper;
 
-        public UserService(IUserService userService, IMapper mapper)
+        public UserAppService(IUserService userService, IMapper mapper)
         {
             _userService = userService;
             this.mapper = mapper;
@@ -35,9 +35,10 @@ namespace Hobify.Application.Service
             return mapper.Map<UserDto>(user);
         }
 
-        public async Task<UserDto> UpdateAsync(UserDto userDto)
+        public async Task<UserDto> UpdateAsync(UserDto userUpdate)
         {
-            var updatedUser = mapper.Map<User>(userDto);
+            var updatedUser = mapper.Map<User>(userUpdate);
+           
             await _userService.UpdateAsync(updatedUser);
             return mapper.Map<UserDto>(updatedUser);
         }

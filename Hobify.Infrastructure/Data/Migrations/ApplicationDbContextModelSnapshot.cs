@@ -4,19 +4,16 @@ using Hobify.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Hobify.Infrastructure.Migrations
+namespace Hobify.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240731191856_First")]
-    partial class First
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +31,7 @@ namespace Hobify.Infrastructure.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 31, 19, 18, 55, 460, DateTimeKind.Utc).AddTicks(9983));
+                        .HasDefaultValue(new DateTime(2024, 8, 2, 15, 56, 59, 3, DateTimeKind.Utc).AddTicks(8613));
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -49,7 +46,7 @@ namespace Hobify.Infrastructure.Migrations
                     b.Property<DateTime>("updatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(469));
+                        .HasDefaultValue(new DateTime(2024, 8, 2, 15, 56, 59, 3, DateTimeKind.Utc).AddTicks(9164));
 
                     b.HasKey("id");
 
@@ -65,7 +62,7 @@ namespace Hobify.Infrastructure.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(5741));
+                        .HasDefaultValue(new DateTime(2024, 8, 2, 15, 56, 59, 4, DateTimeKind.Utc).AddTicks(5357));
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -106,7 +103,7 @@ namespace Hobify.Infrastructure.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 31, 19, 18, 55, 460, DateTimeKind.Utc).AddTicks(6344));
+                        .HasDefaultValue(new DateTime(2024, 8, 2, 15, 56, 59, 3, DateTimeKind.Utc).AddTicks(4138));
 
                     b.Property<Guid>("postId")
                         .HasColumnType("uniqueidentifier");
@@ -135,7 +132,7 @@ namespace Hobify.Infrastructure.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(3831));
+                        .HasDefaultValue(new DateTime(2024, 8, 2, 15, 56, 59, 4, DateTimeKind.Utc).AddTicks(3173));
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -222,7 +219,7 @@ namespace Hobify.Infrastructure.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 31, 19, 18, 55, 460, DateTimeKind.Utc).AddTicks(1895));
+                        .HasDefaultValue(new DateTime(2024, 8, 2, 15, 56, 59, 2, DateTimeKind.Utc).AddTicks(8354));
 
                     b.Property<string>("mediaType")
                         .HasColumnType("nvarchar(max)");
@@ -241,7 +238,7 @@ namespace Hobify.Infrastructure.Migrations
                     b.Property<DateTime?>("updatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 31, 19, 18, 55, 460, DateTimeKind.Utc).AddTicks(2712));
+                        .HasDefaultValue(new DateTime(2024, 8, 2, 15, 56, 59, 2, DateTimeKind.Utc).AddTicks(9176));
 
                     b.Property<Guid>("userId")
                         .HasColumnType("uniqueidentifier");
@@ -264,7 +261,7 @@ namespace Hobify.Infrastructure.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(8313));
+                        .HasDefaultValue(new DateTime(2024, 8, 2, 15, 56, 59, 4, DateTimeKind.Utc).AddTicks(7624));
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -313,7 +310,7 @@ namespace Hobify.Infrastructure.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(1231));
+                        .HasDefaultValue(new DateTime(2024, 8, 2, 15, 56, 59, 3, DateTimeKind.Utc).AddTicks(9915));
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -328,7 +325,7 @@ namespace Hobify.Infrastructure.Migrations
                     b.Property<DateTime>("updatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(1728));
+                        .HasDefaultValue(new DateTime(2024, 8, 2, 15, 56, 59, 4, DateTimeKind.Utc).AddTicks(519));
 
                     b.HasKey("id");
 

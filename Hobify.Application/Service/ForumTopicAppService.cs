@@ -6,12 +6,12 @@ using Hobify.Core.Interface.Services;
 
 namespace Hobify.Application.Service
 {
-    public class ForumTopicService : IForumTopicAppService
+    public class ForumTopicAppService : IForumTopicAppService
     {
         private readonly IForumTopicService forumTopicService;
         private readonly IMapper mapper;
 
-        public ForumTopicService(IForumTopicService forumTopicService, IMapper mapper)
+        public ForumTopicAppService(IForumTopicService forumTopicService, IMapper mapper)
         {
             this.forumTopicService = forumTopicService;
             this.mapper = mapper;

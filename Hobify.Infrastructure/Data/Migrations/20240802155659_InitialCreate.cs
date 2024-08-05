@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Hobify.Infrastructure.Migrations
+namespace Hobify.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class First : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,8 +18,8 @@ namespace Hobify.Infrastructure.Migrations
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 7, 31, 19, 18, 55, 460, DateTimeKind.Utc).AddTicks(9983)),
-                    updatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(469))
+                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 8, 2, 15, 56, 59, 3, DateTimeKind.Utc).AddTicks(8613)),
+                    updatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 8, 2, 15, 56, 59, 3, DateTimeKind.Utc).AddTicks(9164))
                 },
                 constraints: table =>
                 {
@@ -51,8 +51,8 @@ namespace Hobify.Infrastructure.Migrations
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
-                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(1231)),
-                    updatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(1728)),
+                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 8, 2, 15, 56, 59, 3, DateTimeKind.Utc).AddTicks(9915)),
+                    updatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 8, 2, 15, 56, 59, 4, DateTimeKind.Utc).AddTicks(519)),
                     categoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
@@ -74,7 +74,7 @@ namespace Hobify.Infrastructure.Migrations
                     name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     nickname = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(5741)),
+                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 8, 2, 15, 56, 59, 4, DateTimeKind.Utc).AddTicks(5357)),
                     updatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     userId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
@@ -100,7 +100,7 @@ namespace Hobify.Infrastructure.Migrations
                     endDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     location = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     photoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(3831)),
+                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 8, 2, 15, 56, 59, 4, DateTimeKind.Utc).AddTicks(3173)),
                     updatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     subCategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
@@ -153,8 +153,8 @@ namespace Hobify.Infrastructure.Migrations
                     content = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     mediaType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     mediaUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 7, 31, 19, 18, 55, 460, DateTimeKind.Utc).AddTicks(1895)),
-                    updatedAt = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2024, 7, 31, 19, 18, 55, 460, DateTimeKind.Utc).AddTicks(2712)),
+                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 8, 2, 15, 56, 59, 2, DateTimeKind.Utc).AddTicks(8354)),
+                    updatedAt = table.Column<DateTime>(type: "datetime2", nullable: true, defaultValue: new DateTime(2024, 8, 2, 15, 56, 59, 2, DateTimeKind.Utc).AddTicks(9176)),
                     userId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     subCategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
                 },
@@ -183,7 +183,7 @@ namespace Hobify.Infrastructure.Migrations
                     description = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     photoUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 7, 31, 19, 18, 55, 461, DateTimeKind.Utc).AddTicks(8313)),
+                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 8, 2, 15, 56, 59, 4, DateTimeKind.Utc).AddTicks(7624)),
                     updatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     userId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     subCategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
@@ -211,7 +211,7 @@ namespace Hobify.Infrastructure.Migrations
                 {
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     content = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 7, 31, 19, 18, 55, 460, DateTimeKind.Utc).AddTicks(6344)),
+                    createdAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValue: new DateTime(2024, 8, 2, 15, 56, 59, 3, DateTimeKind.Utc).AddTicks(4138)),
                     updatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     userId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     postId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)

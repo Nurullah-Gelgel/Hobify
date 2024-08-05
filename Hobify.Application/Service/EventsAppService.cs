@@ -6,12 +6,12 @@ using Hobify.Core.Interface.Services;
 
 namespace Hobify.Application.Service
 {
-    public class EventsService : IEventsAppService
+    public class EventsAppService : IEventsAppService
     {
         private readonly IEventsService _eventsService;
         private readonly IMapper _mapper;
 
-        public EventsService(IEventsService eventsService, IMapper mapper)
+        public EventsAppService(IEventsService eventsService, IMapper mapper)
         {
             _eventsService = eventsService;
             _mapper = mapper;

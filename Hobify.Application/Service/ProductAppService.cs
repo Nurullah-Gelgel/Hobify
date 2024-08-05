@@ -6,12 +6,12 @@ using Hobify.Core.Interface.Services;
 
 namespace Hobify.Application.Service
 {
-    public class ProductService : IProductAppService
+    public class ProductAppService : IProductAppService
     {
         private readonly IProductService productService;
         private readonly IMapper _mapper;
 
-        public ProductService(IProductService productService, IMapper mapper)
+        public ProductAppService(IProductService productService, IMapper mapper)
         {
             this.productService = productService;
             _mapper = mapper;

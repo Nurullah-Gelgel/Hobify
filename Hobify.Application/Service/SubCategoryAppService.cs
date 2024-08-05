@@ -6,13 +6,13 @@ using Hobify.Core.Interface.Services;
 
 namespace Hobify.Application.Service
 {
-    public class SubCategoryService : ISubCategoryAppService
+    public class SubCategoryAppService : ISubCategoryAppService
     {
         private readonly ISubCategoryService _subCategoryService;
         private readonly IMapper _mapper;
 
 
-        public SubCategoryService(ISubCategoryService subCategoryService, IMapper mapper)
+        public SubCategoryAppService(ISubCategoryService subCategoryService, IMapper mapper)
         {
             _subCategoryService = subCategoryService;
             _mapper = mapper;
