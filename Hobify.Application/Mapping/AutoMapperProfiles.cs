@@ -18,6 +18,8 @@ namespace Hobify.Applicatione.Mapping
             //CreateMap<PostRequestDto, Post>().ReverseMap();
             //CreateMap<PostUpdateDto, Post>().ReverseMap();
 
+            CreateMap<Comment, CommentDto>().ReverseMap();
+
             CreateMap<Category, CategoryDto>().ReverseMap();    
            
             CreateMap<SubCategory, SubCategoryDto>().ReverseMap();
