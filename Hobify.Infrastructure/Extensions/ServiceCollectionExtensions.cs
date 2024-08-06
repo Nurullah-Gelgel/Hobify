@@ -20,6 +20,9 @@ namespace Hobify.Infrastructure.Extensions
             services.AddScoped<ISubCategoryRepository, SubCategoryRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IForumTopicRepository, IForumTopicRepository>();
+            services.AddScoped<IEventRepository, EventsRepository>();
+            services.AddScoped<IChatRoomRepository, ChatRoomRepository>();
+
 
             return services;
         }

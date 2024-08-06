@@ -39,7 +39,7 @@ namespace Hobify.Application.Service
         public async Task<EventsDto> UpdateAsync(EventsDto eventDto)
         {
             var eventEntity = _mapper.Map<Events>(eventDto);
-            var result = _eventsService.UpdateAsync(eventEntity);
+            var result =await _eventsService.UpdateAsync(eventEntity);
             return _mapper.Map<EventsDto>(result);
         }
 

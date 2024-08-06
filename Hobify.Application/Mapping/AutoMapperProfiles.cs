@@ -28,6 +28,9 @@ namespace Hobify.Applicatione.Mapping
 
             CreateMap<ForumTopic, ForumTopicDto>().ReverseMap();
 
+            CreateMap<ChatRoom, ChatRoomDto>().ReverseMap();
+
+            CreateMap<Events, EventsDto>().ReverseMap();
         }
     }
 }

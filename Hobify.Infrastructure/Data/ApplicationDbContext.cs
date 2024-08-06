@@ -100,9 +100,7 @@ namespace Hobify.Infrastructure.Data
                 entity.HasKey(e => e.id);
                 entity.Property(e => e.name).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.createdAt).HasDefaultValue(DateTime.UtcNow);
-                entity.HasOne(e => e.user)
-                      .WithMany(u => u.chatrooms)
-                      .HasForeignKey(e => e.userId);
+               
             });
 
             modelBuilder.Entity<Product>(entity =>
