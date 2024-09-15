@@ -49,5 +49,5 @@ Here are some of the main endpoints available:
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/username/hobify-backend.git
+   git clone https://github.com/Nurullah-Gelgel/Hobify.git
    cd hobify-backend
