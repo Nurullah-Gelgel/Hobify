@@ -1,4 +1,5 @@
 ﻿using Hobify.Core.Entity;
+using Hobify.Core.Entity.Security;
 using Microsoft.EntityFrameworkCore;
 
 namespace Hobify.Infrastructure.Data
@@ -8,6 +9,7 @@ namespace Hobify.Infrastructure.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
+
 
         public DbSet<User> Users { get; set; }
         public DbSet<Post> Posts { get; set; }
@@ -19,6 +21,10 @@ namespace Hobify.Infrastructure.Data
         public DbSet<ChatRoom> ChatRooms { get; set; }
         public DbSet<ForumTopic> ForumTopics { get; set; }
 
+
+        //Security
+        public DbSet<AppUser> AppUsers { get; set; }
+        public DbSet<AppRole> AppRoles { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Entity configurations

@@ -54,5 +54,16 @@ namespace Hobify.Infrastructure.Repository
             return user;
             
         }
+
+        public async Task<User> GetByEmailAsync(string email)
+        {
+          
+            return await _context.Users.FirstOrDefaultAsync(x => x.email == email);
+        }
+
+        public async Task<User> GetByUsernameAsync(string username)
+        {
+            return await _context.Users.FirstOrDefaultAsync(x => x.username == username);
+        }
     }
 }
