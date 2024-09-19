@@ -37,5 +37,15 @@ namespace Hobify.Core.Service
         {
             return await _userRepository.DeleteAsync(id);
         }
+
+        public async Task<User> GetByEmailAsync(string email)
+        {
+            return await _userRepository.GetByEmailAsync(email);
+        }
+
+        public async Task<User> GetByUserNameAsync(string userName)
+        {
+            return await _userRepository.GetByUsernameAsync(userName);
+        }
     }
 }

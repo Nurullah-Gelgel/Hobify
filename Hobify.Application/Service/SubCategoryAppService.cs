@@ -50,6 +50,17 @@ namespace Hobify.Application.Service
             return _mapper.Map<SubCategoryDto>(result);
         }
 
+        public async Task<SubCategoryDto> GetByNameAsync(string name)
+        {
+            var result = await _subCategoryService.GetByNameAsync(name);
+            return _mapper.Map<SubCategoryDto>(result);
+        }
 
+       
+
+        public async Task<Category> GetCategoryBySubCategoryNameAsync(string subCategoryName)
+        {
+            return await _subCategoryService.GetCategoryBySubCategoryNameAsync(subCategoryName);
+        }
     }
 }

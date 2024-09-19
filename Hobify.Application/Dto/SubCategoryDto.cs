@@ -1,4 +1,6 @@
-﻿namespace Hobify.Application.Dto
+﻿using Hobify.Core.Entity;
+
+namespace Hobify.Application.Dto
 {
     public class SubCategoryDto
     {
@@ -8,6 +10,6 @@
         public DateTime createdAt { get; set; }
         public DateTime updatedAt { get; set; }
         public Guid categoryId { get; set; }
-      
+
     }
 }

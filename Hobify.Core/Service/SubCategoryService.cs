@@ -37,5 +37,16 @@ namespace Hobify.Core.Service
             return await _subCategoryRepository.DeleteAsync(id);
         }
 
+        public async Task<SubCategory> GetByNameAsync(string name)
+        {
+            return await _subCategoryRepository.GetByNameAsync(name);
+        }
+
+        
+
+        public async Task<Category> GetCategoryBySubCategoryNameAsync(string subCategoryName)
+        {
+            return await _subCategoryRepository.GetCategoryBySubCategoryNameAsync(subCategoryName);
+        }
     }
 }

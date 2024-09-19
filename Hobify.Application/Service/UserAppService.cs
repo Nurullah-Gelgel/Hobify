@@ -48,5 +48,21 @@ namespace Hobify.Application.Service
             var user = await _userService.DeleteAsync(id);
             return mapper.Map<UserDto>(user);
         }
+
+        public async Task<UserDto> GetByEmailAsync(string email)
+        {
+            var user =await _userService.GetByEmailAsync(email);
+            return mapper.Map<UserDto>(user);
+        }
+
+        public async Task<UserDto> GetByUserNameAsync(string userName)
+        {
+            var user = await _userService.GetByUserNameAsync(userName);
+            if (user == null)
+            {
+                return null;  // Handle null scenario before mapping
+            }
+            return mapper.Map<UserDto>(user);  // Ensure proper mapping
+        }
     }
 }

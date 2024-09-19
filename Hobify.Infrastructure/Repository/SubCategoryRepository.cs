@@ -50,5 +50,22 @@ namespace Hobify.Infrastructure.Repository
             return subCategory;
         }
 
+        public async Task<SubCategory> GetByNameAsync(string name)
+        {
+            return await _context.SubCategories.FirstOrDefaultAsync(x => x.name == name);
+        }
+
+
+
+        public async Task<Category> GetCategoryBySubCategoryNameAsync(string subCategoryName)
+        {
+            // SubCategory'yi adıyla bul
+            var subCategory = await _context.SubCategories
+                                            .Include(sc => sc.category) // Category'yi dahil et
+                                            .FirstOrDefaultAsync(sc => sc.name == subCategoryName);
+
+            // Eğer SubCategory bulunursa, ilişkili Category'yi döndür
+            return subCategory?.category;
+        }
     }
 }
