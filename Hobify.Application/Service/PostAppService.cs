@@ -47,5 +47,17 @@ namespace Hobify.Application.Service
              var post =await _postService.DeleteAsync(id);
              return _mapper.Map<PostDto>(post);
         }
+
+        public async Task<PostDto> GetByTitleAsync(string title)
+        {
+            var post = await _postService.GetByTitleAsync(title);
+            return _mapper.Map<PostDto>(post);
+        }
+
+        public async Task<IEnumerable<PostDto>> GetBySubCategoryAsync(Guid subCategoryId)
+        {
+            var posts = await _postService.GetBySubCategoryAsync(subCategoryId);
+            return _mapper.Map<IEnumerable<PostDto>>(posts);
+        }
     }
 }

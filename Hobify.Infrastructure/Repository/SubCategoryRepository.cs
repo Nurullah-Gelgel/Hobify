@@ -30,6 +30,10 @@ namespace Hobify.Infrastructure.Repository
            return await _context.SubCategories.FindAsync(id);
             
         }
+        public Task<SubCategory> GetCategoryBySubCategoryAsync(Guid categoryId)
+        {
+            return _context.SubCategories.FirstOrDefaultAsync(sc => sc.categoryId == categoryId);
+        }
 
         public async Task<SubCategory> UpdateAsync(SubCategory subCategory)
         {
@@ -67,5 +71,7 @@ namespace Hobify.Infrastructure.Repository
             // Eğer SubCategory bulunursa, ilişkili Category'yi döndür
             return subCategory?.category;
         }
+
+        
     }
 }

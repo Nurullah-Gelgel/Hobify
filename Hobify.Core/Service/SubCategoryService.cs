@@ -42,11 +42,10 @@ namespace Hobify.Core.Service
             return await _subCategoryRepository.GetByNameAsync(name);
         }
 
-        
-
-        public async Task<Category> GetCategoryBySubCategoryNameAsync(string subCategoryName)
+        public async Task<SubCategory> GetCategoryBySubCategoryAsync(Guid categoryId)
         {
-            return await _subCategoryRepository.GetCategoryBySubCategoryNameAsync(subCategoryName);
+            return await _subCategoryRepository.GetCategoryBySubCategoryAsync(categoryId);
         }
-    }
+      }
+    
 }

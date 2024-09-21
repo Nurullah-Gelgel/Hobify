@@ -49,5 +49,20 @@ namespace Hobify.Application.Service
             return _mapper.Map<CategoryDto>(result);
         }
 
+        public async Task<IEnumerable<SubCategoryDto>> GetSubCategoriesByCategoryIdAsync(Guid categoryId)
+        {
+            var category = await _categoryService.GetCategoryWithSubCategoriesAsync(categoryId);
+
+            return category?.subCategories
+                .Select(sc => new SubCategoryDto
+                {
+                    id = sc.id,
+                    name = sc.name,
+                    description = sc.description
+                })
+                .ToList() ?? new List<SubCategoryDto>();
+        }
+
+      
     }
 }

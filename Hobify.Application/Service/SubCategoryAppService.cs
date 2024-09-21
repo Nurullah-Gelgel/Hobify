@@ -58,9 +58,10 @@ namespace Hobify.Application.Service
 
        
 
-        public async Task<Category> GetCategoryBySubCategoryNameAsync(string subCategoryName)
+        public async Task<SubCategoryDto> GetCategoryBySubCategoryAsync(Guid categoryId)
         {
-            return await _subCategoryService.GetCategoryBySubCategoryNameAsync(subCategoryName);
+            var result = await _subCategoryService.GetCategoryBySubCategoryAsync(categoryId);
+            return _mapper.Map<SubCategoryDto>(result);
         }
     }
 }

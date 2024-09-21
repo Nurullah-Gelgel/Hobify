@@ -49,5 +49,12 @@ namespace Hobify.Infrastructure.Repository
             await _context.SaveChangesAsync();
             return category;
         }
+
+        public async Task<Category> GetCategoryWithSubCategoriesAsync(Guid categoryId)
+        {
+            return await _context.Categories
+                .Include(c => c.subCategories)
+                .FirstOrDefaultAsync(c => c.id == categoryId);
+        }
     }
 }

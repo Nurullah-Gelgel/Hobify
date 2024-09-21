@@ -32,7 +32,15 @@ namespace Hobify.Infrastructure.Repository
         {
             return await _context.Posts.FindAsync(id);
         }
+        public async Task<Post> GetByTitleAsync(string title)
+        {
+            return await _context.Posts.FirstOrDefaultAsync(p => p.title == title);
+        }
 
+        public async Task<IEnumerable<Post>> GetBySubCategoryAsync(Guid subCategoryId)
+        {
+            return await _context.Posts.Where(p => p.subCategoryId == subCategoryId).ToListAsync();
+        }
         public async Task<Post> UpdateAsync(Post post)
         {
             _context.Posts.Update(post);
@@ -52,5 +60,6 @@ namespace Hobify.Infrastructure.Repository
             return post;            
         }
 
+      
     }
 }

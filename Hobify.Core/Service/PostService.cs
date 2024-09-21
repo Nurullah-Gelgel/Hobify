@@ -32,6 +32,16 @@ namespace Hobify.Core.Service
             return await _postRepository.GetByIdAsync(id);
         }
 
+        public async Task<IEnumerable<Post>> GetBySubCategoryAsync(Guid subCategoryId)
+        {
+            return await _postRepository.GetBySubCategoryAsync(subCategoryId);
+        }
+
+        public async Task<Post> GetByTitleAsync(string title)
+        {
+            return await  _postRepository.GetByTitleAsync(title);
+        }
+
         public async Task<Post> UpdateAsync(Post post)
         {
             return await _postRepository.UpdateAsync(post);
