@@ -34,6 +34,12 @@ namespace Hobify.Infrastructure.Data
                 entity.Property(e => e.username).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.email).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.password).IsRequired();
+                entity.Property(e => e.createdAt).HasDefaultValue(DateTime.UtcNow);
+                entity.Property(e => e.updatedAt).HasDefaultValue(DateTime.UtcNow);
+                entity.Property(e => e.name);
+                entity.Property(e => e.surname);
+                entity.Property(e => e.birthDate);
+                entity.Property(e => e.phoneNumber);
             });
 
             modelBuilder.Entity<Post>(entity =>

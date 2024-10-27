@@ -4,19 +4,16 @@ using Hobify.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
-namespace Hobify.Infrastructure.Data.Migrations
+namespace Hobify.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240806091634_UpdateMigration")]
-    partial class UpdateMigration
+    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +31,7 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 6, 9, 16, 33, 490, DateTimeKind.Utc).AddTicks(4637));
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 700, DateTimeKind.Utc).AddTicks(1922));
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -49,7 +46,7 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<DateTime>("updatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 6, 9, 16, 33, 490, DateTimeKind.Utc).AddTicks(5111));
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 700, DateTimeKind.Utc).AddTicks(2362));
 
                     b.HasKey("id");
 
@@ -68,7 +65,7 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 6, 9, 16, 33, 491, DateTimeKind.Utc).AddTicks(1515));
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 700, DateTimeKind.Utc).AddTicks(7970));
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -106,7 +103,7 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 6, 9, 16, 33, 490, DateTimeKind.Utc).AddTicks(285));
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 699, DateTimeKind.Utc).AddTicks(8236));
 
                     b.Property<Guid>("postId")
                         .HasColumnType("uniqueidentifier");
@@ -135,7 +132,7 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 6, 9, 16, 33, 490, DateTimeKind.Utc).AddTicks(9449));
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 700, DateTimeKind.Utc).AddTicks(5867));
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -222,7 +219,7 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 6, 9, 16, 33, 489, DateTimeKind.Utc).AddTicks(4205));
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 699, DateTimeKind.Utc).AddTicks(4021));
 
                     b.Property<string>("mediaType")
                         .HasColumnType("nvarchar(max)");
@@ -241,7 +238,7 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<DateTime?>("updatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 6, 9, 16, 33, 489, DateTimeKind.Utc).AddTicks(5003));
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 699, DateTimeKind.Utc).AddTicks(4570));
 
                     b.Property<Guid>("userId")
                         .HasColumnType("uniqueidentifier");
@@ -264,7 +261,7 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 6, 9, 16, 33, 491, DateTimeKind.Utc).AddTicks(2716));
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 700, DateTimeKind.Utc).AddTicks(8955));
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -301,6 +298,52 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("Hobify.Core.Entity.Security.AppRole", b =>
+                {
+                    b.Property<Guid>("AppRoleID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("RoleDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AppRoleID");
+
+                    b.ToTable("AppRoles");
+                });
+
+            modelBuilder.Entity("Hobify.Core.Entity.Security.AppUser", b =>
+                {
+                    b.Property<Guid>("AppUserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("AppRoleID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid>("RoleId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("AppUserId");
+
+                    b.HasIndex("AppRoleID");
+
+                    b.ToTable("AppUsers");
+                });
+
             modelBuilder.Entity("Hobify.Core.Entity.SubCategory", b =>
                 {
                     b.Property<Guid>("id")
@@ -313,7 +356,7 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<DateTime>("createdAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 6, 9, 16, 33, 490, DateTimeKind.Utc).AddTicks(6075));
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 700, DateTimeKind.Utc).AddTicks(3118));
 
                     b.Property<string>("description")
                         .IsRequired()
@@ -328,7 +371,7 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<DateTime>("updatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
-                        .HasDefaultValue(new DateTime(2024, 8, 6, 9, 16, 33, 490, DateTimeKind.Utc).AddTicks(6934));
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 700, DateTimeKind.Utc).AddTicks(3707));
 
                     b.HasKey("id");
 
@@ -346,23 +389,39 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Property<string>("bio")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("createdAt")
+                    b.Property<DateTime?>("birthDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("createdAt")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 699, DateTimeKind.Utc).AddTicks(2098));
 
                     b.Property<string>("email")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("password")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("phoneNumber")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("profilePhotoUrl")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("surname")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("updatedAt")
-                        .HasColumnType("datetime2");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("datetime2")
+                        .HasDefaultValue(new DateTime(2024, 9, 25, 13, 35, 29, 699, DateTimeKind.Utc).AddTicks(2669));
 
                     b.Property<string>("username")
                         .IsRequired()
@@ -466,6 +525,17 @@ namespace Hobify.Infrastructure.Data.Migrations
                     b.Navigation("user");
                 });
 
+            modelBuilder.Entity("Hobify.Core.Entity.Security.AppUser", b =>
+                {
+                    b.HasOne("Hobify.Core.Entity.Security.AppRole", "AppRole")
+                        .WithMany("AppUsers")
+                        .HasForeignKey("AppRoleID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AppRole");
+                });
+
             modelBuilder.Entity("Hobify.Core.Entity.SubCategory", b =>
                 {
                     b.HasOne("Hobify.Core.Entity.Category", "category")
@@ -485,6 +555,11 @@ namespace Hobify.Infrastructure.Data.Migrations
             modelBuilder.Entity("Hobify.Core.Entity.Post", b =>
                 {
                     b.Navigation("comments");
+                });
+
+            modelBuilder.Entity("Hobify.Core.Entity.Security.AppRole", b =>
+                {
+                    b.Navigation("AppUsers");
                 });
 
             modelBuilder.Entity("Hobify.Core.Entity.SubCategory", b =>

@@ -24,7 +24,9 @@ namespace Hobify.Infrastructure.Security
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.email)
+                   new Claim(ClaimTypes.Name, user.email),
+                   new Claim(ClaimTypes.NameIdentifier, user.id.ToString()),
+                   new Claim(ClaimTypes.Email, user.email)
                     
                 }),
                 Expires = DateTime.UtcNow.AddHours(1),

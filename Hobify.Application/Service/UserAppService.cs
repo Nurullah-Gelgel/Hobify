@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿    using AutoMapper;
 using Hobify.Application.Dto;
 using Hobify.Application.Interface;
 using Hobify.Core.Entity;
@@ -31,7 +31,8 @@ namespace Hobify.Application.Service
 
         public async Task<UserDto> GetByIdAsync(Guid id)
         {
-            var user = _userService.GetByIdAsync(id);
+            var user = await _userService.GetByIdAsync(id);
+            if (user == null) return null;
             return mapper.Map<UserDto>(user);
         }
 

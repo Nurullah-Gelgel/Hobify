@@ -34,7 +34,7 @@ namespace Hobify.Application.Service
 
         public async Task<AuthResult> RegisterAsync(RegisterDto registerRequest)
         {
-            var user = new User { email = registerRequest.Email,username=registerRequest.Username, password = BCrypt.Net.BCrypt.HashPassword(registerRequest.Password) };
+            var user = new User { email = registerRequest.Email,username=registerRequest.Username, password = BCrypt.Net.BCrypt.HashPassword(registerRequest.Password) , birthDate=registerRequest.birthDate, name=registerRequest.name,surname=registerRequest.surname, phoneNumber=registerRequest.phoneNumber};
             await _userRepository.CreateAsync(user);
             return new AuthResult {Succeeded=true };
         }

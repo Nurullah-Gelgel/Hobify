@@ -8,9 +8,8 @@ namespace Hobify.Applicatione.Mapping
     {
         public AutoMapperProfiles()
         {
-          
-            CreateMap<User, UserDto>().ReverseMap();
 
+            CreateMap<User, UserDto>().ReverseMap();
             CreateMap<UserRequestDto, User>().ReverseMap();
             CreateMap<UserUpdateDto, User>().ReverseMap();
 
